@@ -1,0 +1,49 @@
+<!Doctype html>
+<html>
+<head>
+	<title>Demo</title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			width: 100%;
+			height: 100vh;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		I am curious - why is it that you want to do this via JavaScript? The element is going to end up in your DOM/markup either way. – jamauss May 1 '13 at 22:03
+  	
+ 		
+@jamauss, I'm fine with it ending up in my DOM for further manipulation; but I'm not okay with it going in front of my header tag. I strongly believe in following W3C structure standards. – O P May 1 '13 at 22:04 
+  	
+ 		
+That still doesn't really explain why you want to do it via JavaScript instead of just putting it in the document manually. Why can't you put it where you want without JavaScript? – jamauss May 1 '13 at 22:11
+  	
+ 		
+@jamauss, I can put it where I want to without JavaScript. I want to do it with JavaScript so it does not interfere with my perfected HTML structure. – O P May 1 '13 at 22:19
+	</div>
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var promo_bar = {
+				title : "hello world",
+				button : false,
+				url : "",
+				color: "coral"
+			}
+
+		var a='<div style="background:'+ promo_bar.color +'; height: 50px;">'+
+		promo_bar.title
+	+'</div>';
+	 	$('body').prepend(a);
+
+
+		});
+	</script>
+</body>
+</html>
